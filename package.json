@@ -4,10 +4,14 @@
   "scripts": {
     "clean": "rm -rf ./packages/*/node_modules  ./node_modules",
     "clean-locks": "rm -rf ./packages/*/yarn.lock ./yarn.lock",
-    "reset": "yarn clean && yarn clean-locks && yarn bootstrap",
-    "build-web": "lerna run build --scope='web'"
+    "reset": "yarn clean && yarn clean-locks && lerna bootstrap",
+    "build-web": "lerna bootstrap && lerna run build --scope='web'"
   },
   "devDependencies": {
     "lerna": "^3.20.2"
+  },
+  "engines": {
+    "node": ">=9.11.1",
+    "yarn": ">=1.4.2"
   }
 }
